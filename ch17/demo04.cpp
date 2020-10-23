@@ -7,14 +7,21 @@ using std::endl;
 
 int feature01()
 {
-    cout << ">>>>>>>>>> feature01 start >>>>>>>>>>" << endl;
-
     std::default_random_engine e;
 
     for (int i = 0; i < 10; ++i)
         cout << "rand[" << i << "] = " << e() << endl;
 
-    cout << "<<<<<<<<<< feature01 end   <<<<<<<<<<" << endl;
+    return 0;
+}
+
+int feature02()
+{
+    std::uniform_int_distribution<unsigned> u(0, 9);
+    std::default_random_engine e;
+
+    for (int i = 0; i < 10; ++i)
+        cout << u(e) << " ";
     cout << endl;
     return 0;
 }
@@ -22,6 +29,12 @@ int feature01()
 int main()
 {
     feature01();
+    cout << "-------------------------------" << endl;
+    cout << endl;
+
+    feature02();
+    cout << "-------------------------------" << endl;
+    cout << endl;
 
     return 0;
 }
