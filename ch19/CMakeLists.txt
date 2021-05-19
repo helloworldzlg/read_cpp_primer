@@ -1,1 +1,1 @@
-add_executable(ch19demo01 demo01.cpp)
+add_executable(ch19-demo01 demo01.cpp)

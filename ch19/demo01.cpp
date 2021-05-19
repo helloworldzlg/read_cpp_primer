@@ -7,7 +7,7 @@ using std::endl;
 class Base
 {
 public:
-    void printA()
+    virtual void printA()
     {
         cout << "this is Base::printA" << endl;
     }
@@ -26,12 +26,14 @@ int feature01()
 {
     Base *pa = new Derived();
 
-    if (Derived *pb = dynamic_cast<Derived *>(pa))
+    try
     {
+        Derived *pb = dynamic_cast<Derived *>(pa);
         cout << "Base dynamic_cast to Derived success" << endl;
+
         pb->printA();
     }
-    else
+    catch (...)
     {
         cout << "Base dynamic_cast to Derived failure" << endl;
     }
